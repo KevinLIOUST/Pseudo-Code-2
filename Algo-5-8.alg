@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="//On affiche 1 dernière fois le tableau avec les nombres du plus petit au plus grand ! :)"/>
+    <description texte="" courant="nbSaisir PREND_LA_VALEUR nbSaisir++"/>
     <extension extnom="inactif"/>
     <fonction fctetat="inactif" fctcode=""/>
     <F2 F2defaut="" F2etat="inactif" F2para="" F2lignes=""/>
@@ -14,19 +14,28 @@
         <item code="1#NOMBRE#inversion" algoitem="inversion EST_DU_TYPE NOMBRE"/>
         <item code="1#NOMBRE#temp" algoitem="temp EST_DU_TYPE NOMBRE"/>
         <item code="1#NOMBRE#taille" algoitem="taille EST_DU_TYPE NOMBRE"/>
+        <item code="1#NOMBRE#nbSaisir" algoitem="nbSaisir EST_DU_TYPE NOMBRE"/>
     </item>
     <item code="101#debutalgo" algoitem="DEBUT_ALGORITHME">
-        <item code="5#taille#5#pasliste" algoitem="taille PREND_LA_VALEUR 5"/>
+        <item code="5#taille#0#pasliste" algoitem="taille PREND_LA_VALEUR 0"/>
         <item code="5#increment#0#pasliste" algoitem="increment PREND_LA_VALEUR 0"/>
-        <item code="19#On demande à l'utilisateur d'entrer un nombre tant que le tableau n'est pas rempli ! :)" algoitem="//On demande à l'utilisateur d'entrer un nombre tant que le tableau n'est pas rempli ! :)"/>
-        <item code="15#increment &lt; taille" algoitem="TANT_QUE (increment &lt; taille) FAIRE">
+        <item code="5#nbSaisir#1#pasliste" algoitem="nbSaisir PREND_LA_VALEUR 1"/>
+        <item code="4#Veuillez saisir le nombre numéro #0" algoitem="AFFICHER &quot;Veuillez saisir le nombre numéro &quot;"/>
+        <item code="3#nbSaisir#0#pasliste" algoitem="AFFICHER nbSaisir"/>
+        <item code="4# :#1" algoitem="AFFICHER &quot; :&quot;"/>
+        <item code="2#nbEntre#pasliste" algoitem="LIRE nbEntre"/>
+        <item code="5#nbSaisir#nbSaisir++#pasliste" algoitem="nbSaisir PREND_LA_VALEUR nbSaisir++"/>
+        <item code="19#On demande à l'utilisateur d'entrer un nombre tant que l'utilisateur n'a pas entré 0 ! :)" algoitem="//On demande à l'utilisateur d'entrer un nombre tant que l'utilisateur n'a pas entré 0 ! :)"/>
+        <item code="15#nbEntre != 0" algoitem="TANT_QUE (nbEntre != 0) FAIRE">
             <item code="16#debuttantque" algoitem="DEBUT_TANT_QUE"/>
             <item code="4#Veuillez saisir le nombre numéro #0" algoitem="AFFICHER &quot;Veuillez saisir le nombre numéro &quot;"/>
             <item code="3#increment#0#pasliste" algoitem="AFFICHER increment"/>
             <item code="4# : #0" algoitem="AFFICHER &quot; : &quot;"/>
             <item code="2#nbEntre#pasliste" algoitem="LIRE nbEntre"/>
             <item code="5#listeNombres#nbEntre#increment" algoitem="listeNombres[increment] PREND_LA_VALEUR nbEntre"/>
-            <item code="5#increment#increment + 1#pasliste" algoitem="increment PREND_LA_VALEUR increment + 1"/>
+            <item code="5#taille#taille++#pasliste" algoitem="taille PREND_LA_VALEUR taille++"/>
+            <item code="5#increment#increment++#pasliste" algoitem="increment PREND_LA_VALEUR increment++"/>
+            <item code="5#nbSaisir#nbSaisir++#pasliste" algoitem="nbSaisir PREND_LA_VALEUR nbSaisir++"/>
             <item code="17#fintantque" algoitem="FIN_TANT_QUE"/>
         </item>
         <item code="5#increment#0#pasliste" algoitem="increment PREND_LA_VALEUR 0"/>
