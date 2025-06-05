@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="FIN_POUR"/>
+    <description texte="" courant=""/>
     <extension extnom="inactif"/>
     <fonction fctcode="" fctetat="inactif"/>
     <F2 F2para="" F2etat="inactif" F2lignes="" F2defaut=""/>
@@ -15,13 +15,20 @@
         <item code="5#increment#1#pasliste" algoitem="increment PREND_LA_VALEUR 1"/>
         <item code="4#Veuillez entrer un nombre de départ : #0" algoitem="AFFICHER &quot;Veuillez entrer un nombre de départ : &quot;"/>
         <item code="2#nbEntre#pasliste" algoitem="LIRE nbEntre"/>
-        <item code="12#increment#increment#10" algoitem="POUR increment ALLANT_DE increment A 10">
+        <item code="12#increment#increment#nbEntre" algoitem="POUR increment ALLANT_DE increment A nbEntre">
             <item code="13#debutpour" algoitem="DEBUT_POUR"/>
-            <item code="3#nbEntre#0#pasliste" algoitem="AFFICHER nbEntre"/>
-            <item code="4# x #0" algoitem="AFFICHER &quot; x &quot;"/>
             <item code="3#increment#0#pasliste" algoitem="AFFICHER increment"/>
-            <item code="4# = #0" algoitem="AFFICHER &quot; = &quot;"/>
-            <item code="20#nbEntre * increment#1" algoitem="AFFICHERCALCUL nbEntre * increment"/>
+            <item code="6#increment == nbEntre" algoitem="SI (increment == nbEntre) ALORS">
+                <item code="7#debutsi" algoitem="DEBUT_SI"/>
+                <item code="4# = #0" algoitem="AFFICHER &quot; = &quot;"/>
+                <item code="103#commentaire" algoitem=""/>
+                <item code="8#finsi" algoitem="FIN_SI"/>
+                <item code="9#sinon" algoitem="SINON">
+                    <item code="10#debutsinon" algoitem="DEBUT_SINON"/>
+                    <item code="4# + #0" algoitem="AFFICHER &quot; + &quot;"/>
+                    <item code="11#finsinon" algoitem="FIN_SINON"/>
+                </item>
+            </item>
             <item code="14#finpour" algoitem="FIN_POUR"/>
         </item>
     </item>
